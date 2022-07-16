@@ -1,4 +1,4 @@
-[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+[target.thumbv6m-none-eabi]
 runner = "elf2uf2-rs -d"
 
 rustflags = [
@@ -8,8 +8,6 @@ rustflags = [
   "link-arg=--nmagic",
   "-C",
   "link-arg=-Tlink.x",
-  "-C",
-  "link-arg=-Tdefmt.x",
 
   # Code-size optimizations.
   #   trap unreachable can save a lot of space, but requires nightly compiler.
